@@ -31,6 +31,7 @@
   .tag-blue { background: #bee3f8; color: #2a4365; }
   .tag-yellow { background: #fefcbf; color: #744210; }
   .tag-gray { background: #e2e8f0; color: #4a5568; }
+  .tag-orange { background: #feebc8; color: #7b341e; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 768px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } }
 </style>
@@ -49,7 +50,7 @@
     <div class="label">Leads Contacted</div>
   </div>
   <div class="kpi">
-    <div class="number">35</div>
+    <div class="number">45</div>
     <div class="label">Positive Replies</div>
   </div>
   <div class="kpi">
@@ -68,15 +69,15 @@
     <div class="label">Reply Rate</div>
   </div>
   <div class="kpi">
-    <div class="number">13.9%</div>
+    <div class="number">17.9%</div>
     <div class="label">Positive Reply Rate</div>
   </div>
   <div class="kpi">
-    <div class="number">197</div>
+    <div class="number">153</div>
     <div class="label">Leads per Positive Reply</div>
   </div>
   <div class="kpi">
-    <div class="number">5.7%</div>
+    <div class="number">4.4%</div>
     <div class="label">Meeting Booking Rate</div>
   </div>
 </div>
@@ -84,22 +85,41 @@
 <!-- SECTION 1: EMAIL TYPE ANALYSIS -->
 <div class="section">
   <h2>1. Generic vs Personal Email Performance</h2>
-  <p style="margin-bottom: 16px; color: #718096;">Comparison of reply rates between generic company emails (info@, frontdesk@, manager@, etc.) and personal work emails (firstname@company.com). Generic emails make up 12% of all leads contacted.</p>
+  <p style="margin-bottom: 16px; color: #718096;">Comparison of reply rates between generic company emails (info@, frontdesk@, manager@, etc.) and personal work emails (firstname@company.com). Generic emails make up 12% of all leads contacted but 33% of qualified positives.</p>
 
   <table>
     <tr><th>Email Type</th><th>Contacted</th><th>Replied</th><th>Reply Rate</th><th>Positive</th><th>Positive Reply Rate</th></tr>
-    <tr class="highlight"><td><span class="tag tag-blue">Generic Emails</span></td><td>859</td><td>39</td><td><strong>4.5%</strong></td><td>9</td><td><strong>23.1%</strong></td></tr>
-    <tr><td><span class="tag tag-green">Personal Work Emails</span></td><td>6,063</td><td>212</td><td>3.5%</td><td>26</td><td>12.3%</td></tr>
+    <tr class="highlight"><td><span class="tag tag-blue">Generic Emails</span></td><td>859</td><td>39</td><td><strong>4.5%</strong></td><td>15</td><td><strong>38.5%</strong></td></tr>
+    <tr><td><span class="tag tag-green">Personal Work Emails</span></td><td>6,063</td><td>212</td><td>3.5%</td><td>30</td><td>14.2%</td></tr>
   </table>
 
   <div class="insight">
-    <strong>Key Insight:</strong> Generic emails reply at a higher rate (<strong>4.5%</strong> vs 3.5%) and convert replies to positives at nearly <strong>2x the rate</strong> (23.1% vs 12.3%). While personal emails generated more total positives (26 vs 9) due to sheer volume, generic emails are significantly more likely to convert when they do reply — likely because the person managing the inbox is often a decision-maker at smaller businesses.
+    <strong>Key Insight:</strong> Generic emails reply at a higher rate (<strong>4.5%</strong> vs 3.5%) and convert replies to positives at nearly <strong>2.7x the rate</strong> (38.5% vs 14.2%). While personal emails generated more total positives (30 vs 15) due to volume, generic emails are significantly more efficient — likely because the person managing the inbox (often an owner/manager at smaller businesses) is the decision-maker.
   </div>
 </div>
 
-<!-- SECTION 2: CAMPAIGN PERFORMANCE -->
+<!-- SECTION 2: NOT QUALIFIED -->
 <div class="section">
-  <h2>2. Campaign Performance</h2>
+  <h2>2. Disqualified Leads — Home Cleaning Requests</h2>
+  <p style="margin-bottom: 16px; color: #718096;">9 replies were disqualified because they asked for residential/home cleaning rather than commercial services.</p>
+
+  <table>
+    <tr><th>Company</th><th>Email</th><th>Reason</th></tr>
+    <tr><td>YepSketch</td><td>jodene@yepsketch.com</td><td>2 bedroom cottage cleaning</td></tr>
+    <tr><td>Interlinked Property Solutions</td><td>greg.wickham@interlinkedproperty.com.au</td><td>Residential service request</td></tr>
+    <tr><td>Hybrid Digital Marketing</td><td>michael@hybriddigital.com.au</td><td>House/studio spring clean</td></tr>
+    <tr><td>Chess Moving Australia</td><td>cameronv@chessmoving.com.au</td><td>Residential cleaning</td></tr>
+    <tr><td>The Jungle Body Sydney</td><td>thejunglebodysydney@gmail.com</td><td>Domestic cleaning</td></tr>
+    <tr><td>Bay Sports</td><td>lina.k@baysports.com.au</td><td>Friend's Airbnb house</td></tr>
+    <tr><td>Maths Tutor Near Me</td><td>mathstutornearme@gmail.com</td><td>Residential address</td></tr>
+    <tr><td>Sales & Telesales Solutions</td><td>jenny@telesalestraining.com.au</td><td>Home cleaning</td></tr>
+    <tr><td>Mint Property Agents</td><td>paul@mintbelfield.com.au</td><td>End of lease cleaning</td></tr>
+  </table>
+</div>
+
+<!-- SECTION 3: CAMPAIGN PERFORMANCE -->
+<div class="section">
+  <h2>3. Campaign Performance</h2>
   <p style="margin-bottom: 16px; color: #718096;">Results across all 10 Frontier Cleaning outbound campaigns from January to March 2026.</p>
 
   <table>
@@ -117,54 +137,64 @@
   </table>
 </div>
 
-<!-- SECTION 3: POSITIVE LEADS -->
+<!-- SECTION 4: POSITIVE LEADS -->
 <div class="section">
-  <h2>3. Positive Leads</h2>
-  <p style="margin-bottom: 16px; color: #718096;">All 35 leads that responded positively, classified by email type.</p>
+  <h2>4. Qualified Positive Leads</h2>
+  <p style="margin-bottom: 16px; color: #718096;">45 leads that responded positively to commercial cleaning, classified by email type. Home cleaning requests excluded.</p>
 
-  <h3>Personal Work Emails (26)</h3>
+  <h3>Personal Work Emails (30)</h3>
   <table>
-    <tr><th>Company</th><th>Contact</th><th>Email</th></tr>
-    <tr><td>Bashful</td><td>Vicky</td><td>vicky@bashful.com.au</td></tr>
-    <tr><td>Two Tribes Media</td><td>Quentin</td><td>quentin@intouchmagazine.com.au</td></tr>
-    <tr><td>Hunter Readymixed Concrete</td><td>Ryan</td><td>ryan@hunterconcrete.com</td></tr>
-    <tr><td>The Ascott</td><td>Sam Grasso</td><td>sam.grasso@the-ascott.com</td></tr>
-    <tr><td>Three Blue Ducks</td><td>Neil</td><td>neil@threeblueducks.com</td></tr>
-    <tr><td>Urban Tadka</td><td>Mandeep Rana</td><td>mandeep.rana@urbantadka.com.au</td></tr>
-    <tr><td>Corretto Dee Why</td><td>Kurtis</td><td>kurtis@correttodeewhy.com</td></tr>
-    <tr><td>Real Group Co</td><td>Nick</td><td>nick@real-group.com.au</td></tr>
-    <tr><td>FuturePlace</td><td>Leon K</td><td>leonk@futureplace.tech</td></tr>
-    <tr><td>Green St Property</td><td>Peter</td><td>peter@greenstreet.com.au</td></tr>
-    <tr><td>Merc Real Estate</td><td>Michelle</td><td>michelle@mercrealestate.com.au</td></tr>
-    <tr><td>Mint Property Agents</td><td>Paul</td><td>paul@mintbelfield.com.au</td></tr>
-    <tr><td>The Property Concierge Sydney</td><td>Tanya</td><td>tanya@tpconcierge.com</td></tr>
-    <tr><td>Impero</td><td>Oksana</td><td>oksana@impero.com.au</td></tr>
-    <tr><td>YepSketch</td><td>Jodene</td><td>jodene@yepsketch.com</td></tr>
-    <tr><td>Interlinked Property Solutions</td><td>Greg Wickham</td><td>greg.wickham@interlinkedproperty.com.au</td></tr>
-    <tr><td>Modoras</td><td>Ewan Van Zyl</td><td>ewan.vanzyl@modoras.com</td></tr>
-    <tr><td>JDV Projects</td><td>James C</td><td>jamesc@jdvgroup.com.au</td></tr>
-    <tr><td>Step In Recruitment</td><td>Arapeta</td><td>arapeta@stepinrecruitment.com.au</td></tr>
-    <tr><td>Midland Pty Ltd</td><td>James</td><td>james@midlandind.com.au</td></tr>
-    <tr><td>Bay Sports</td><td>Lina K</td><td>lina.k@baysports.com.au</td></tr>
-    <tr><td>Astral People</td><td>Alex</td><td>alex@astralpeople.com</td></tr>
-    <tr><td>Zone Global Group</td><td>Shula</td><td>shula@zone-global.com</td></tr>
-    <tr><td>Camden Golf Club</td><td>Donna</td><td>donna@camdengolfclub.com.au</td></tr>
-    <tr><td>Spiess Australia Smallgoods</td><td>Nathan</td><td>nathan@spiessaustralia.com</td></tr>
-    <tr><td>Fleck Earthmoving (NSW)</td><td>Michael</td><td>michael@fleckearthmoving.com.au</td></tr>
+    <tr><th>Company</th><th>Contact</th><th>Interest</th></tr>
+    <tr><td>FuturePlace</td><td>leonk@futureplace.tech</td><td>Referred to office manager</td></tr>
+    <tr><td>Corretto Dee Why</td><td>kurtis@correttodeewhy.com</td><td>Restaurant monthly deep clean</td></tr>
+    <tr><td>The Property Concierge Sydney</td><td>tanya@tpconcierge.com</td><td>Asked about service area</td></tr>
+    <tr><td>Arc Projects</td><td>brad@arcprojects.build</td><td>Office cleaning quote</td></tr>
+    <tr><td>Buyers Agency Australia</td><td>dragan@buyersagencyaustralia.com.au</td><td>Office quote, multiple replies</td></tr>
+    <tr><td>FernForm Construction</td><td>fernando@fernform.com.au</td><td>Office bathrooms/kitchen quote</td></tr>
+    <tr><td>Master Real Estate</td><td>alex@masterrealestate.com.au</td><td>Emergency cleans</td></tr>
+    <tr><td>Quinn Marketing</td><td>nathan@quinnmarketing.com.au</td><td>Rate sheet request</td></tr>
+    <tr><td>BBA Property Advocates</td><td>rhoda@bbapropertyadvocates.com.au</td><td>78sqm office quote</td></tr>
+    <tr><td>We Know Video</td><td>jack.shanahan@weknowvideo.com.au</td><td>Fortnightly office cleaning</td></tr>
+    <tr><td>Katalyst Construction</td><td>nerva.k@katalystconstruction.com.au</td><td>Rate sheet request</td></tr>
+    <tr><td>ABC Tyrepower</td><td>chris@abctyrepower.com.au</td><td>Auto repair shop</td></tr>
+    <tr><td>Bashful</td><td>vicky@bashful.com.au</td><td>Potts Point office, switching cleaners</td></tr>
+    <tr><td>Two Tribes Media</td><td>quentin@intouchmagazine.com.au</td><td>Future interest + strata</td></tr>
+    <tr><td>Hunter Readymixed Concrete</td><td>ryan@hunterconcrete.com</td><td>Invited to visit office</td></tr>
+    <tr><td>One Fifty Marketing</td><td>naomi@onefiftymarketing.com.au</td><td>Rate sheet, scheduled visit</td></tr>
+    <tr><td>Back Up Chiropractic</td><td>raf@backupclinic.com.au</td><td>52sqm clinic quote</td></tr>
+    <tr><td>Astral People</td><td>alex@astralpeople.com</td><td>Looped in colleagues</td></tr>
+    <tr><td>Zone Global Group</td><td>shula@zone-global.com</td><td>Full office cleaning quote</td></tr>
+    <tr><td>JDV Projects</td><td>jamesc@jdvgroup.com.au</td><td>Rate sheet request</td></tr>
+    <tr><td>Camden Golf Club</td><td>donna@camdengolfclub.com.au</td><td>Asked about service area</td></tr>
+    <tr><td>MCLP Lawyers</td><td>speh@mclp.com.au</td><td>Interested, asking about bins</td></tr>
+    <tr><td>Step In Recruitment</td><td>arapeta@stepinrecruitment.com.au</td><td>Wants to see rates</td></tr>
+    <tr><td>Fleck Earthmoving</td><td>michael@fleckearthmoving.com.au</td><td>Rate list request</td></tr>
+    <tr><td>Spiess Australia</td><td>nathan@spiessaustralia.com</td><td>Requested phone call</td></tr>
+    <tr><td>Piccolo Me / FABE</td><td>nick@reatalegroup.au</td><td>Meeting mid-month</td></tr>
+    <tr><td>Imagine Childcare</td><td>monisha@imaginechildcare.com.au</td><td>Childcare centre, asking area</td></tr>
+    <tr><td>ELMO Health</td><td>oliver@elmohealth.com.au</td><td>Health clinic, scheduled visit</td></tr>
+    <tr><td>Green St Property</td><td>peter@greenstreet.com.au</td><td>CC'd premises manager</td></tr>
+    <tr><td>Real Group Co</td><td>nick@real-group.com.au</td><td>Acknowledged</td></tr>
   </table>
 
-  <h3>Generic Emails (9)</h3>
+  <h3>Generic Emails (15)</h3>
   <table>
-    <tr><th>Company</th><th>Email</th><th>Type</th></tr>
-    <tr><td>Performance Playground</td><td>info@performanceplayground.com.au</td><td><span class="tag tag-gray">info@</span></td></tr>
-    <tr><td>Singhaganta Muaythai Gym</td><td>info@singhagantamuaythai.com</td><td><span class="tag tag-gray">info@</span></td></tr>
-    <tr><td>6X Training</td><td>frontdesk@6x.com.au</td><td><span class="tag tag-gray">frontdesk@</span></td></tr>
-    <tr><td>The Gym on King</td><td>manager@gymonking.com.au</td><td><span class="tag tag-gray">manager@</span></td></tr>
-    <tr><td>Culture Training and Performance</td><td>info@culturetraining.com.au</td><td><span class="tag tag-gray">info@</span></td></tr>
-    <tr><td>Achieve Strength & Conditioning</td><td>achievestrcond@gmail.com</td><td><span class="tag tag-gray">gmail</span></td></tr>
-    <tr><td>Quantum Athletic</td><td>coach@quantumathletic.com.au</td><td><span class="tag tag-gray">coach@</span></td></tr>
-    <tr><td>Bennett Murada Architects</td><td>info@bennettmurada.com.au</td><td><span class="tag tag-gray">info@</span></td></tr>
-    <tr><td>Peter Stutchbury Architecture</td><td>info@peterstutchbury.com.au</td><td><span class="tag tag-gray">info@</span></td></tr>
+    <tr><th>Company</th><th>Email</th><th>Interest</th></tr>
+    <tr><td>Brumby Motors</td><td>brumbymotors@gmail.com</td><td>Auto repair estimate</td></tr>
+    <tr><td>Carrera Car Care</td><td>info@carreracarcare.com.au</td><td>Auto repair, engaged</td></tr>
+    <tr><td>Clear Vision Plumbing</td><td>info@clearvisionplumbing.com.au</td><td>Warehouse cleaning quote</td></tr>
+    <tr><td>Performance Playground</td><td>info@performanceplayground.com.au</td><td>Gym 100sqm quote</td></tr>
+    <tr><td>6X Training</td><td>frontdesk@6x.com.au</td><td>Gym weekly cleaning</td></tr>
+    <tr><td>Culture Training</td><td>info@culturetraining.com.au</td><td>Gym weekly, scheduled visit</td></tr>
+    <tr><td>Quantum Athletic</td><td>coach@quantumathletic.com.au</td><td>Gym, scheduled visit</td></tr>
+    <tr><td>Achieve Strength & Conditioning</td><td>achievestrcond@gmail.com</td><td>Gym daily, scheduled visit</td></tr>
+    <tr><td>Surfside Wellness</td><td>manager@surfsidewellness.com</td><td>Gym, agreed to quote</td></tr>
+    <tr><td>Peter Stutchbury Architecture</td><td>info@peterstutchbury.com.au</td><td>Architecture office quote</td></tr>
+    <tr><td>The Good Movement</td><td>info@thegoodmovement.com.au</td><td>Rate sheet for future</td></tr>
+    <tr><td>Bennett Murada Architects</td><td>info@bennettmurada.com.au</td><td>Carpet + deep clean</td></tr>
+    <tr><td>Brett Slater Solicitors</td><td>admin@brettslater.com</td><td>Office quote</td></tr>
+    <tr><td>Mirror Mirror Aesthetics</td><td>info@mirrormirroraesthetics.com</td><td>Interested, wants visit</td></tr>
+    <tr><td>C10 Pilates</td><td>connect@c10pilates.com.au</td><td>Reformer machine cleaning</td></tr>
   </table>
 </div>
 
