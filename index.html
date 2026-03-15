@@ -1,255 +1,354 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frontier Cleaning — Outreach Report</title>
+<meta charset="utf-8">
+<title>Campaign Analytics - Frontier Cleaning - 2026-03-09 to 2026-03-13</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #2d3748; line-height: 1.6; }
-  .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-  .header { background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 50%, #3282b8 100%); color: white; padding: 40px; border-radius: 12px; margin-bottom: 30px; text-align: center; }
-  .header h1 { font-size: 28px; margin-bottom: 8px; }
-  .header p { font-size: 14px; opacity: 0.85; }
-  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 30px; }
-  .kpi { background: white; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-  .kpi .number { font-size: 32px; font-weight: 700; color: #0f4c75; }
-  .kpi .label { font-size: 12px; color: #718096; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
-  .section { background: white; border-radius: 10px; padding: 30px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-  .section h2 { font-size: 20px; color: #0f4c75; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
-  .section h3 { font-size: 16px; color: #2d3748; margin: 16px 0 10px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
-  th { background: #0f4c75; color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 12px; text-transform: uppercase; }
-  td { padding: 9px 12px; border-bottom: 1px solid #e2e8f0; }
-  tr:hover { background: #f7fafc; }
-  .highlight { background: #ebf8ff !important; font-weight: 600; }
-  .insight { background: #ebf8ff; border-left: 4px solid #3282b8; padding: 14px 18px; margin: 14px 0; border-radius: 0 8px 8px 0; font-size: 13px; }
-  .insight strong { color: #0f4c75; }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .tag-green { background: #c6f6d5; color: #22543d; }
-  .tag-red { background: #fed7d7; color: #742a2a; }
-  .tag-blue { background: #bee3f8; color: #2a4365; }
-  .tag-yellow { background: #fefcbf; color: #744210; }
-  .tag-gray { background: #e2e8f0; color: #4a5568; }
-  .tag-orange { background: #feebc8; color: #7b341e; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 768px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #ffffff; color: #1e293b; margin: 0; padding: 20px; }
+    h1 { color: #4338ca; margin-bottom: 4px; }
+    h2 { color: #4f46e5; margin-top: 32px; }
+    .subtitle { color: #6366f1; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 32px; }
+    th { background: #eef2ff; color: #4338ca; text-align: left; padding: 10px 12px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; position: sticky; top: 0; }
+    td { padding: 8px 12px; border-bottom: 1px solid #e0e7ff; font-size: 0.85rem; }
+    td.preview { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #64748b; font-size: 0.8rem; }
+    tr:hover { background: #eef2ff; }
+    .summary { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .card { background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 8px; padding: 16px 20px; flex: 1; min-width: 140px; }
+    .card-label { color: #7c3aed; font-size: 0.8rem; text-transform: uppercase; }
+    .card-value { color: #1e1b4b; font-size: 1.8rem; font-weight: 700; margin-top: 4px; }
+    .card-value.green { color: #16a34a; }
+    .card-value.red { color: #dc2626; }
+    .card-value.yellow { color: #ca8a04; }
+    .badge { padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+    .badge-positive { background: #dcfce7; color: #16a34a; }
+    .badge-negative { background: #fee2e2; color: #dc2626; }
+    .section-divider { border-top: 2px solid #e0e7ff; margin: 40px 0 20px 0; padding-top: 20px; }
+    .empty-state { color: #64748b; font-style: italic; padding: 20px; }
 </style>
 </head>
 <body>
-<div class="container">
+<h1>Campaign Analytics: Frontier Cleaning</h1>
+<p class="subtitle">Week of 2026-03-09 to 2026-03-13</p>
 
-<div class="header">
-  <h1>Frontier Cleaning — Outreach Report</h1>
-  <p>Cold Email Campaign Performance Analysis &bull; January - February 2026</p>
+<div class="summary">
+    <div class="card">
+        <div class="card-label">Campaigns</div>
+        <div class="card-value">2</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Total Emails Sent</div>
+        <div class="card-value">1,344</div>
+    </div>
+    <div class="card">
+        <div class="card-label">New Leads Contacted</div>
+        <div class="card-value">464</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Reply Rate</div>
+        <div class="card-value green">4.2%</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Bounce Rate</div>
+        <div class="card-value green">0.3%</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Positive Reply Rate</div>
+        <div class="card-value green">8.8%</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Meetings Booked</div>
+        <div class="card-value green">1</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Leads per Positive Reply</div>
+        <div class="card-value">93</div>
+    </div>
 </div>
 
-<div class="kpi-row">
-  <div class="kpi">
-    <div class="number">6,922</div>
-    <div class="label">Leads Contacted</div>
-  </div>
-  <div class="kpi">
-    <div class="number">45</div>
-    <div class="label">Positive Replies</div>
-  </div>
-  <div class="kpi">
-    <div class="number">6</div>
-    <div class="label">Calls Booked</div>
-  </div>
-  <div class="kpi">
-    <div class="number">10</div>
-    <div class="label">Campaigns</div>
-  </div>
-</div>
+<h2>Campaign Breakdown</h2>
+<table>
+<tr><th>Campaign</th><th>Status</th><th>Sent</th><th>New Leads</th><th>Replies</th><th>Reply Rate</th><th>Bounced</th><th>Bounce Rate</th><th>Opportunities</th></tr>
+<tr>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span style="color:#22c55e;font-weight:600">Active</span></td>
+            <td>1,344</td>
+            <td>464</td>
+            <td>56</td>
+            <td>4.2%</td>
+            <td>4</td>
+            <td>0.3%</td>
+            <td>4</td>
+        </tr><tr>
+            <td>Frontier Cleaning | Mar 4 | Various</td>
+            <td><span style="color:#64748b;font-weight:600">Completed</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td>1</td>
+        </tr>
+</table>
 
-<div class="kpi-row">
-  <div class="kpi">
-    <div class="number">3.6%</div>
-    <div class="label">Reply Rate</div>
-  </div>
-  <div class="kpi">
-    <div class="number">17.9%</div>
-    <div class="label">Positive Reply Rate</div>
-  </div>
-  <div class="kpi">
-    <div class="number">153</div>
-    <div class="label">Leads per Positive Reply</div>
-  </div>
-  <div class="kpi">
-    <div class="number">13.3%</div>
-    <div class="label">Meeting Booking Rate</div>
-  </div>
-</div>
+<div class="section-divider"></div>
 
-<!-- SECTION 1: EMAIL TYPE ANALYSIS -->
-<div class="section">
-  <h2>1. Generic vs Personal Email Performance</h2>
-  <p style="margin-bottom: 16px; color: #718096;">Comparison of reply rates between generic company emails (info@, frontdesk@, manager@, etc.) and personal work emails (firstname@company.com). Generic emails make up 12% of all leads contacted but 33% of qualified positives.</p>
+<h2>Positive Responders This Week (5)</h2>
+<table><tr><th>Email</th><th>Campaign</th><th>Status</th><th>Date</th><th>Preview</th></tr><tr>
+            <td>james@southernstyleconstruction.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-positive">Positive</span></td>
+            <td>2026-03-12</td>
+            <td class="preview">0478027631  We are doing a 2 story extensions. Its near comp</td>
+        </tr>
+<tr>
+            <td>admin@dpcnsw.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-positive">Positive</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Good Morning Alice,  10am tomorrow will work perfect. Lookin</td>
+        </tr>
+<tr>
+            <td>newcastleprowash@gmail.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-positive">Positive</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Hey paul,  Unfortunately I am based out of my home so I don'</td>
+        </tr>
+<tr>
+            <td>mathstutornearme@gmail.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-positive">Meeting Booked</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Yes that works. See you then. Sorry I don't give out my phon</td>
+        </tr>
+<tr>
+            <td>sales@markostainless.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-positive">Positive</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Once a month  49568968   Regards,  Adam Young Managing Direc</td>
+        </tr></table>
 
-  <table>
-    <tr><th>Email Type</th><th>Contacted</th><th>Replied</th><th>Reply Rate</th><th>Positive</th><th>Positive Reply Rate</th></tr>
-    <tr class="highlight"><td><span class="tag tag-blue">Generic Emails</span></td><td>859</td><td>39</td><td><strong>4.5%</strong></td><td>15</td><td><strong>38.5%</strong></td></tr>
-    <tr><td><span class="tag tag-green">Personal Work Emails</span></td><td>6,063</td><td>212</td><td>3.5%</td><td>30</td><td>14.2%</td></tr>
-  </table>
+<h2>Negative Responders This Week (31)</h2>
+<table><tr><th>Email</th><th>Campaign</th><th>Status</th><th>Date</th><th>Preview</th></tr><tr>
+            <td>hello@ourpilatesco.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-13</td>
+            <td class="preview">Hi Alice,  Thanks so much for reaching out and introducing y</td>
+        </tr>
+<tr>
+            <td>hello@designanthology.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-13</td>
+            <td class="preview">Hi Paul,  We don't require a cleaner, thanks  *t.*   +61 2 4</td>
+        </tr>
+<tr>
+            <td>paul@safetyservices.network</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-12</td>
+            <td class="preview">We don't require cleaning services.  Thanks P   -------- Ori</td>
+        </tr>
+<tr>
+            <td>care.ntl@rightathome.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-12</td>
+            <td class="preview">Hello,  We have our own staff that do cleaning, thank you.  </td>
+        </tr>
+<tr>
+            <td>food@hotrock.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-12</td>
+            <td class="preview">Thanks but we don’t need your services  Regards,  Patrick Wi</td>
+        </tr>
+<tr>
+            <td>kleensweep13@gmail.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-12</td>
+            <td class="preview">Hi  Sorry we don’t do provide cleaning services, we do howev</td>
+        </tr>
+<tr>
+            <td>hello@mytreehouse.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-12</td>
+            <td class="preview">Good Morning,  Thanks for your email.  We are not looking fo</td>
+        </tr>
+<tr>
+            <td>mail@arnoldproperty.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Good morning Alice,  Thank you for reaching out regarding yo</td>
+        </tr>
+<tr>
+            <td>clients@coleconsultinggroup.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Hi there, Thank you for reaching out. At this stage we alrea</td>
+        </tr>
+<tr>
+            <td>admin@bnkdservices.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Hi Alice,  Thanks for reaching out.  Unfortunately we don't </td>
+        </tr>
+<tr>
+            <td>abclaundromat@exemail.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">No thanks Paul.  -----Original Message----- From: Paul Droop</td>
+        </tr>
+<tr>
+            <td>newcastlespiritualistchurchinc@gmail.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">please stop emailing. We do not need a cleaning team. we are</td>
+        </tr>
+<tr>
+            <td>samantha@kaysadalefarm.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Hi Paul  Thanks for reaching out but we are happy with our c</td>
+        </tr>
+<tr>
+            <td>clubdiscreet687@gmail.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Thanks for reaching out  We are not in need of any cleaning </td>
+        </tr>
+<tr>
+            <td>info@integratedfoundationsolutions.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-10</td>
+            <td class="preview">Hi Alice, Thanks for your email. We are mostly a civil and e</td>
+        </tr>
+<tr>
+            <td>adelaide@sutersarch.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi Alice,  Thank you for reaching out. We appreciate the off</td>
+        </tr>
+<tr>
+            <td>info@urban-joinery.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">We already have a cleaner thank you  Kind regards Emma Britt</td>
+        </tr>
+<tr>
+            <td>contact@npcarecollective.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi Paul,  I work in a consult room and dont require cleaning</td>
+        </tr>
+<tr>
+            <td>hello@custom3pl.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">All good, cleaning not required   50 Spitfire Place Rutherfo</td>
+        </tr>
+<tr>
+            <td>admin@gpafs.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi  Our landlord arranges the cleaning for the whole buildin</td>
+        </tr>
+<tr>
+            <td>info@healingwave.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi there (sorry I don't know your name), Yes I am the person</td>
+        </tr>
+<tr>
+            <td>director@hecc.org.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Good morning!   Thank you so much for reaching out but we ar</td>
+        </tr>
+<tr>
+            <td>office@emselevators.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">We are not requiring any cleaning services  Regards  Richard</td>
+        </tr>
+<tr>
+            <td>cs@academysheetmetal.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi Alice  We are happy with current cleaners  Cheers     Kri</td>
+        </tr>
+<tr>
+            <td>info@genr8printing.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hey guys, Thanks for reaching out. I clean the property myse</td>
+        </tr>
+<tr>
+            <td>hello@amandadowniecreative.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi Alice,  Thanks for reaching out. I don't actually have a </td>
+        </tr>
+<tr>
+            <td>errolt@ozemail.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">I am sorry but I have no interest in your service  Please ta</td>
+        </tr>
+<tr>
+            <td>newcastle@peachespilates.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi there  We have a cleaner already.  thank you  Ellie  *Pea</td>
+        </tr>
+<tr>
+            <td>enquiries@rntelitedrivingschool.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi Paul , We don't need any cleaning. Thank you for your ema</td>
+        </tr>
+<tr>
+            <td>upbeatnewcastle@gmail.com</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi Alice,  We don’t require any cleaning services.  Many tha</td>
+        </tr>
+<tr>
+            <td>enquiries@fleetmotive.com.au</td>
+            <td>Frontier Cleaning | Mar 4 | Various | Company website</td>
+            <td><span class="badge badge-negative">Negative</span></td>
+            <td>2026-03-09</td>
+            <td class="preview">Hi Alice,  Thanks for reaching out, but we already have a cl</td>
+        </tr></table>
 
-  <div class="insight">
-    <strong>Key Insight:</strong> Generic emails reply at a higher rate (<strong>4.5%</strong> vs 3.5%) and convert replies to positives at nearly <strong>2.7x the rate</strong> (38.5% vs 14.2%). While personal emails generated more total positives (30 vs 15) due to volume, generic emails are significantly more efficient — likely because the person managing the inbox (often an owner/manager at smaller businesses) is the decision-maker.
-  </div>
-</div>
-
-<!-- SECTION 2: INDUSTRY ANALYSIS -->
-<div class="section">
-  <h2>2. Industry Analysis — Positive Responses</h2>
-  <p style="margin-bottom: 16px; color: #718096;">Breakdown of the 45 qualified positive replies by industry. Companies were classified based on their primary business activity.</p>
-
-  <table>
-    <tr><th>Industry</th><th>Positives</th><th>Share</th><th>Companies</th></tr>
-    <tr class="highlight">
-      <td><span class="tag tag-green">Fitness & Gyms</span></td>
-      <td><strong>8</strong></td>
-      <td><strong>17.8%</strong></td>
-      <td style="font-size:12px;">Performance Playground, 6X Training, Culture Training, Quantum Athletic, Achieve S&C, Surfside Wellness, The Good Movement, C10 Pilates</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-blue">Real Estate & Property</span></td>
-      <td><strong>6</strong></td>
-      <td>13.3%</td>
-      <td style="font-size:12px;">Property Concierge, Buyers Agency Australia, Master Real Estate, BBA Property Advocates, Green St Property, Real Group Co</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-orange">Construction & Trades</span></td>
-      <td><strong>6</strong></td>
-      <td>13.3%</td>
-      <td style="font-size:12px;">FernForm, Katalyst Construction, Hunter Concrete, JDV Projects, Fleck Earthmoving, Clear Vision Plumbing</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-yellow">Marketing & Creative</span></td>
-      <td><strong>5</strong></td>
-      <td>11.1%</td>
-      <td style="font-size:12px;">Quinn Marketing, We Know Video, Bashful, InTouch Magazine, One Fifty Marketing</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-blue">Architecture</span></td>
-      <td><strong>3</strong></td>
-      <td>6.7%</td>
-      <td style="font-size:12px;">Arc Projects, Peter Stutchbury Architecture, Bennett Murada Architects</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-red">Automotive</span></td>
-      <td><strong>3</strong></td>
-      <td>6.7%</td>
-      <td style="font-size:12px;">ABC Tyrepower, Brumby Motors, Carrera Car Care</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-green">Healthcare & Wellness</span></td>
-      <td><strong>3</strong></td>
-      <td>6.7%</td>
-      <td style="font-size:12px;">Back Up Chiropractic, ELMO Health, Mirror Mirror Aesthetics</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-orange">Food & Hospitality</span></td>
-      <td><strong>3</strong></td>
-      <td>6.7%</td>
-      <td style="font-size:12px;">Corretto Dee Why, Piccolo Me / FABE, Spiess Australia</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-gray">Professional Services</span></td>
-      <td><strong>3</strong></td>
-      <td>6.7%</td>
-      <td style="font-size:12px;">FuturePlace, Zone Global Group, Step In Recruitment</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-blue">Legal</span></td>
-      <td><strong>2</strong></td>
-      <td>4.4%</td>
-      <td style="font-size:12px;">MCLP Lawyers, Brett Slater Solicitors</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-yellow">Entertainment & Recreation</span></td>
-      <td><strong>2</strong></td>
-      <td>4.4%</td>
-      <td style="font-size:12px;">Astral People, Camden Golf Club</td>
-    </tr>
-    <tr>
-      <td><span class="tag tag-gray">Education & Childcare</span></td>
-      <td><strong>1</strong></td>
-      <td>2.2%</td>
-      <td style="font-size:12px;">Imagine Childcare</td>
-    </tr>
-  </table>
-
-  <div class="insight">
-    <strong>Key Insight:</strong> <strong>Fitness & Gyms</strong> led with 8 positive replies (17.8%), followed by <strong>Real Estate & Property</strong> and <strong>Construction & Trades</strong> tied at 6 each (13.3%). The top 4 industries — Fitness, Real Estate, Construction, and Marketing — account for <strong>55.6%</strong> of all positive responses. Gyms in particular showed high engagement, with many booking site visits for cleaning quotes.
-  </div>
-</div>
-
-<!-- SECTION 3: POSITIVE LEADS -->
-<div class="section">
-  <h2>3. Qualified Positive Leads</h2>
-  <p style="margin-bottom: 16px; color: #718096;">45 leads that responded positively to commercial cleaning, classified by email type. Home cleaning requests excluded.</p>
-
-  <h3>Personal Work Emails (30)</h3>
-  <table>
-    <tr><th>Company</th><th>Contact</th><th>Interest</th></tr>
-    <tr><td>FuturePlace</td><td>leonk@futureplace.tech</td><td>Referred to office manager</td></tr>
-    <tr><td>Corretto Dee Why</td><td>kurtis@correttodeewhy.com</td><td>Restaurant monthly deep clean</td></tr>
-    <tr><td>The Property Concierge Sydney</td><td>tanya@tpconcierge.com</td><td>Asked about service area</td></tr>
-    <tr><td>Arc Projects</td><td>brad@arcprojects.build</td><td>Office cleaning quote</td></tr>
-    <tr><td>Buyers Agency Australia</td><td>dragan@buyersagencyaustralia.com.au</td><td>Office quote, multiple replies</td></tr>
-    <tr><td>FernForm Construction</td><td>fernando@fernform.com.au</td><td>Office bathrooms/kitchen quote</td></tr>
-    <tr><td>Master Real Estate</td><td>alex@masterrealestate.com.au</td><td>Emergency cleans</td></tr>
-    <tr><td>Quinn Marketing</td><td>nathan@quinnmarketing.com.au</td><td>Rate sheet request</td></tr>
-    <tr><td>BBA Property Advocates</td><td>rhoda@bbapropertyadvocates.com.au</td><td>78sqm office quote</td></tr>
-    <tr><td>We Know Video</td><td>jack.shanahan@weknowvideo.com.au</td><td>Fortnightly office cleaning</td></tr>
-    <tr><td>Katalyst Construction</td><td>nerva.k@katalystconstruction.com.au</td><td>Rate sheet request</td></tr>
-    <tr><td>ABC Tyrepower</td><td>chris@abctyrepower.com.au</td><td>Auto repair shop</td></tr>
-    <tr><td>Bashful</td><td>vicky@bashful.com.au</td><td>Potts Point office, switching cleaners</td></tr>
-    <tr><td>Two Tribes Media</td><td>quentin@intouchmagazine.com.au</td><td>Future interest + strata</td></tr>
-    <tr><td>Hunter Readymixed Concrete</td><td>ryan@hunterconcrete.com</td><td>Invited to visit office</td></tr>
-    <tr><td>One Fifty Marketing</td><td>naomi@onefiftymarketing.com.au</td><td>Rate sheet, scheduled visit</td></tr>
-    <tr><td>Back Up Chiropractic</td><td>raf@backupclinic.com.au</td><td>52sqm clinic quote</td></tr>
-    <tr><td>Astral People</td><td>alex@astralpeople.com</td><td>Looped in colleagues</td></tr>
-    <tr><td>Zone Global Group</td><td>shula@zone-global.com</td><td>Full office cleaning quote</td></tr>
-    <tr><td>JDV Projects</td><td>jamesc@jdvgroup.com.au</td><td>Rate sheet request</td></tr>
-    <tr><td>Camden Golf Club</td><td>donna@camdengolfclub.com.au</td><td>Asked about service area</td></tr>
-    <tr><td>MCLP Lawyers</td><td>speh@mclp.com.au</td><td>Interested, asking about bins</td></tr>
-    <tr><td>Step In Recruitment</td><td>arapeta@stepinrecruitment.com.au</td><td>Wants to see rates</td></tr>
-    <tr><td>Fleck Earthmoving</td><td>michael@fleckearthmoving.com.au</td><td>Rate list request</td></tr>
-    <tr><td>Spiess Australia</td><td>nathan@spiessaustralia.com</td><td>Requested phone call</td></tr>
-    <tr><td>Piccolo Me / FABE</td><td>nick@reatalegroup.au</td><td>Meeting mid-month</td></tr>
-    <tr><td>Imagine Childcare</td><td>monisha@imaginechildcare.com.au</td><td>Childcare centre, asking area</td></tr>
-    <tr><td>ELMO Health</td><td>oliver@elmohealth.com.au</td><td>Health clinic, scheduled visit</td></tr>
-    <tr><td>Green St Property</td><td>peter@greenstreet.com.au</td><td>CC'd premises manager</td></tr>
-    <tr><td>Real Group Co</td><td>nick@real-group.com.au</td><td>Acknowledged</td></tr>
-  </table>
-
-  <h3>Generic Emails (15)</h3>
-  <table>
-    <tr><th>Company</th><th>Email</th><th>Interest</th></tr>
-    <tr><td>Brumby Motors</td><td>brumbymotors@gmail.com</td><td>Auto repair estimate</td></tr>
-    <tr><td>Carrera Car Care</td><td>info@carreracarcare.com.au</td><td>Auto repair, engaged</td></tr>
-    <tr><td>Clear Vision Plumbing</td><td>info@clearvisionplumbing.com.au</td><td>Warehouse cleaning quote</td></tr>
-    <tr><td>Performance Playground</td><td>info@performanceplayground.com.au</td><td>Gym 100sqm quote</td></tr>
-    <tr><td>6X Training</td><td>frontdesk@6x.com.au</td><td>Gym weekly cleaning</td></tr>
-    <tr><td>Culture Training</td><td>info@culturetraining.com.au</td><td>Gym weekly, scheduled visit</td></tr>
-    <tr><td>Quantum Athletic</td><td>coach@quantumathletic.com.au</td><td>Gym, scheduled visit</td></tr>
-    <tr><td>Achieve Strength & Conditioning</td><td>achievestrcond@gmail.com</td><td>Gym daily, scheduled visit</td></tr>
-    <tr><td>Surfside Wellness</td><td>manager@surfsidewellness.com</td><td>Gym, agreed to quote</td></tr>
-    <tr><td>Peter Stutchbury Architecture</td><td>info@peterstutchbury.com.au</td><td>Architecture office quote</td></tr>
-    <tr><td>The Good Movement</td><td>info@thegoodmovement.com.au</td><td>Rate sheet for future</td></tr>
-    <tr><td>Bennett Murada Architects</td><td>info@bennettmurada.com.au</td><td>Carpet + deep clean</td></tr>
-    <tr><td>Brett Slater Solicitors</td><td>admin@brettslater.com</td><td>Office quote</td></tr>
-    <tr><td>Mirror Mirror Aesthetics</td><td>info@mirrormirroraesthetics.com</td><td>Interested, wants visit</td></tr>
-    <tr><td>C10 Pilates</td><td>connect@c10pilates.com.au</td><td>Reformer machine cleaning</td></tr>
-  </table>
-</div>
-
-<!-- FOOTER -->
-<div style="text-align: center; padding: 20px; color: #a0aec0; font-size: 12px;">
-  Frontier Cleaning Campaign Report &bull; Prepared by Automathiq &bull; March 2026
-</div>
-
-</div>
 </body>
 </html>
